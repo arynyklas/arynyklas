@@ -1,14 +1,15 @@
 <h1 align="center">Hi, I'm Aryn 👋</h1>
 
 <p align="center">
-  <b>Fullstack Python Engineer</b> · Astana, Kazakhstan 🇰🇿<br/>
-  Building production backends, Telegram bots, and pragmatic automation.
+  <b>Software Engineer · Backend, DevOps &amp; AI Infrastructure</b> · Astana, Kazakhstan 🇰🇿<br/>
+  On-prem Kubernetes and GPU platforms, production backends, Telegram tooling.
 </p>
 
 <p align="center">
   <a href="mailto:aryn@sek.su"><img alt="Email" src="https://img.shields.io/badge/aryn%40sek.su-mail-informational?style=flat-square&logo=protonmail&logoColor=white"></a>
   <a href="https://t.me/arynyklas"><img alt="Telegram" src="https://img.shields.io/badge/Telegram-@arynyklas-26A5E4?style=flat-square&logo=telegram&logoColor=white"></a>
-  <a href="https://arynyklas.github.io/uptime"><img alt="Uptime" src="https://img.shields.io/badge/status-uptime-brightgreen?style=flat-square&logo=statuspage&logoColor=white"></a>
+  <a href="https://t.me/aryn_dev"><img alt="Channel" src="https://img.shields.io/badge/channel-@aryn__dev-26A5E4?style=flat-square&logo=telegram&logoColor=white"></a>
+  <a href="https://www.linkedin.com/in/arynyklas/"><img alt="LinkedIn" src="https://img.shields.io/badge/LinkedIn-arynyklas-0A66C2?style=flat-square&logo=linkedin&logoColor=white"></a>
   <img alt="Profile views" src="https://komarev.com/ghpvc/?username=arynyklas&style=flat-square&color=blueviolet">
   <a href="https://github.com/arynyklas?tab=followers"><img alt="Followers" src="https://img.shields.io/github/followers/arynyklas?style=flat-square&label=Followers&logo=github&color=181717"></a>
 </p>
@@ -17,10 +18,12 @@
 
 ### About
 
-- 🛠 **Fullstack Software Engineer** at **Finance Monitoring Agency of Republic of Kazakhstan**, shipping production Python backends, web apps, and automation.
+- 🛠 **Fullstack Software Engineer** at the **Financial Monitoring Agency of Kazakhstan**. One of two engineers running its on-prem platform: Proxmox VE, Kubernetes (Talos, k3s) with GitOps, SSO, secrets, networking and monitoring.
+- 🧠 Operate a multi-node **H200 GPU** cluster that serves LLMs on vLLM behind an OpenAI-compatible gateway (+32% Gemma-4-31B throughput per GPU from bf16 and speculative decoding); building our own inference engine in Rust and C++/CUDA to run alongside it.
+- 🐍 Build data pipelines on top of it: procurement-risk analytics and media monitoring with millions of records on PostgreSQL, ClickHouse and S3, classified by LLMs on our own GPUs.
 - 🧪 Pragmatic about **DDD, dependency injection, integration tests on ephemeral Postgres**, and CI/CD that doesn't lie.
-- 🦀 Reach for **Rust** when Python is the wrong tool — data migration, reconciliation, systems utilities.
-- 🎓 BCS @ **Astana IT University** · maintainer of **ReMoodle** — deadline notifier for students.
+- 🦀 Reach for **Rust** when Python is the wrong tool: proxies, e-signature middleware, data migration and reconciliation.
+- 🎓 BCS @ **Astana IT University** · maintainer of **ReMoodle**, a deadline notifier for students.
 
 ---
 
@@ -28,7 +31,7 @@
 
 <p align="center">
   <a href="https://skillicons.dev">
-    <img src="https://skillicons.dev/icons?i=py,ts,js,rust,go,c,cpp,bash,react,tailwind,vite,fastapi,nodejs,postgres,sqlite,redis,mongodb,elasticsearch,rabbitmq,docker,kubernetes,terraform,ansible,ipfs,nginx,grafana,prometheus,linux,git,github,gitlab,githubactions,sentry,cloudflare,vscode&perline=10" alt="skills"/>
+    <img src="https://skillicons.dev/icons?i=py,ts,js,rust,go,c,cpp,bash,react,tailwind,vite,bun,fastapi,nodejs,graphql,postgres,mysql,sqlite,redis,mongodb,elasticsearch,rabbitmq,docker,kubernetes,terraform,ansible,aws,ipfs,nginx,grafana,prometheus,pytorch,linux,git,github,gitlab,githubactions,sentry,cloudflare,vscode&perline=10" alt="skills"/>
   </a>
 </p>
 
@@ -36,62 +39,75 @@
 
 `Python` · `TypeScript` / `JavaScript` · `Rust` · `Go` · `C` / `C++` · `SQL` · `Bash` · `HTML` / `CSS`
 
+#### Infrastructure
+
+**Virtualization:** Proxmox VE · iSCSI and FC SAN storage · multipath · LVM · OCFS2 · ZFS · Proxmox Backup Server
+
+**Kubernetes & GitOps:** Talos · k3s · Cilium (Gateway API) · Helm · Kustomize · Flux · ArgoCD · cert-manager · CloudNativePG
+
+**Containers & IaC:** Docker · Docker Compose · podman · Terraform / OpenTofu · Ansible · cloud-init · AWS · Cloudflare · IPFS
+
+**Network:** OPNsense · HAProxy · Traefik · Nginx · Caddy · Envoy · WireGuard · IPsec (strongSwan) · custom mesh VPN · nftables · PowerDNS (DNSSEC)
+
+**Identity & secrets:** Keycloak (OIDC, SCIM) · oauth2-proxy · OpenBao / Vault · internal PKI · SOPS / age
+
+#### AI infrastructure
+
+vLLM (speculative decoding, FP8 / NVFP4, 1M-token context) · llama.cpp · Envoy AI Gateway · Gateway API Inference Extension · NVIDIA GPU Operator · MIG · DCGM · PyTorch
+
+#### CI/CD & Observability
+
+GitHub Actions (test → build → deploy) · GitLab CI · werf · kubeconform · gitleaks · pre-commit
+
+Grafana · Prometheus · Alertmanager · Loki · Tempo · VictoriaMetrics · Sentry · OpenTelemetry
+
 #### Backend (Python)
 
-**Web:** FastAPI · Litestar · aiohttp · Starlette
+**Web:** FastAPI · Litestar · Granian · aiohttp · Starlette
 
-**Telegram:** aiogram 3 · aiogram_dialog · Pyrogram / pyrofork · pytdlib · TON Connect
+**Telegram:** Telethon · aiogram 3 · aiogram_dialog · Pyrogram / pyrofork · pytdlib · TON Connect
 
-**Async / messaging:** asyncio · arq · FastStream · Celery
+**Async / messaging:** asyncio · arq · FastStream · Celery · Dagster · gRPC
 
-**Data layer:** SQLAlchemy · Alembic · Pydantic · beanie · attrs · msgspec
+**Data layer:** SQLAlchemy · Alembic · asyncpg · Pydantic · dishka · beanie · attrs · msgspec
 
-**HTTP / scraping:** httpx · aiohttp · Selenium · Playwright · BeautifulSoup
+**HTTP / scraping:** httpx · niquests · aiohttp · Selenium · Playwright · BeautifulSoup
 
-**LLM / AI:** OpenAI · Anthropic · LiteLLM · LangChain (where it earns its keep)
+**LLM / AI:** self-hosted vLLM · Ollama · OpenAI · Anthropic · LiteLLM · LangChain (where it earns its keep)
 
 #### Frontend
 
-React · Mantine · TanStack Query · zod · Vite · Tailwind CSS · TypeScript
+React · Mantine · TanStack Query / Router · zod · Vite · Tailwind CSS · TypeScript · Bun
 
 #### Systems / Rust
 
-Tokio · Serde · SQLx · Reqwest · clap — for migration tools and reconciliation utilities
+Tokio · axum · Serde · SQLx · Reqwest · clap · grammers (MTProto): proxies, e-signature middleware, migration and reconciliation tools
 
 #### Databases
 
-PostgreSQL (incl. replicas) · Redis · MongoDB · ElasticSearch · Qdrant · SQLite · ClickHouse (light)
+PostgreSQL (Patroni, replicas, FDW, pgvector, PgBouncer) · ClickHouse · Redis / Valkey · MongoDB · ElasticSearch · Qdrant · Neo4j · StarRocks · MySQL · SQLite
 
 #### Messaging & Storage
 
 NATS / JetStream · RabbitMQ · Kafka · SeaweedFS · MinIO · S3-compatible
 
-#### Infrastructure
-
-Docker · Docker Compose · k3s / Kubernetes · Helm · ArgoCD · Traefik · Nginx · HAProxy
-
-Terraform · Ansible · Cloudflare · Proxmox VE · iSCSI storage · LVM · ZFS · IPFS
-
-#### CI/CD & Observability
-
-GitHub Actions (test → build → deploy) · GitLab CI · pre-commit
-
-Grafana · Prometheus · Loki · Tempo · Sentry · OpenTelemetry
-
 #### Tooling
 
-Linux · Bash · Make · just · Poetry · uv · ruff · mypy · pytest · Cargo · pnpm · Git · GitHub · GitLab · VS Code
+Linux · Bash · Make · just · Poetry · uv · ruff · ty · mypy · pytest · Cargo · pnpm · Git · GitHub · GitLab · VS Code
 
 ---
 
 ### 🚀 Featured projects
 
-| Repo                                                                         | Stack            | What it does                                                                                |
-|------------------------------------------------------------------------------|------------------|---------------------------------------------------------------------------------------------|
-| [**tg_gifts_notifier**](https://github.com/arynyklas/tg_gifts_notifier) ⭐ 48 | Python · MTProto | Live notifier for new Telegram Gifts — runs [@gifts_detector](https://t.me/gifts_detector). |
-| [**SPOwnerBot**](https://github.com/arynyklas/SPOwnerBot) ⭐ 24               | Python · aiogram | Telegram channel-owner toolkit.                                                             |
-| [**ArynIDBot**](https://github.com/arynyklas/ArynIDBot) ⭐ 11                 | Python           | Telegram ID & metadata inspector.                                                           |
-| [**tma-template**](https://github.com/arynyklas/tma-template)                | Python           | Production-ready backend template for Telegram Mini Apps & bots.                            |
+| Repo | Stack | What it does |
+|------|-------|--------------|
+| [**tgin**](https://github.com/arynyklas/tgin) | Rust | Ingress and load balancer for high-load Telegram bots (my maintained fork). About 0.1 ms proxy overhead, up to 9.9k rps; the 1.0 LTS rewrite adds MTProto accounts. |
+| [**open-ncalayer**](https://github.com/arynyklas/open-ncalayer) | Rust | Open-source, cross-platform replacement for NCALayer, Kazakhstan's e-signature browser middleware. |
+| [**oh-my-pi**](https://github.com/arynyklas/oh-my-pi) | TypeScript · Bun | AI coding agent fork with a multi-tenant LLM auth gateway: ACLs, credential pools, audit. |
+| [**tg_gifts_notifier**](https://github.com/arynyklas/tg_gifts_notifier) ⭐ 52 | Python · Telethon | Live notifier for new Telegram Gifts, runs [@gifts_detector](https://t.me/gifts_detector). |
+| [**SPOwnerBot**](https://github.com/arynyklas/SPOwnerBot) ⭐ 24 | Python · Telethon | Finds the owner of a sticker pack; about 40k users. |
+| [**ArynIDBot**](https://github.com/arynyklas/ArynIDBot) ⭐ 12 | Python · Telethon | Telegram ID and media metadata inspector. |
+| [**tma-template**](https://github.com/arynyklas/tma-template) | Python | Production-ready backend template for Telegram Mini Apps and bots. |
 
 ---
 
@@ -120,5 +136,5 @@ Linux · Bash · Make · just · Poetry · uv · ruff · mypy · pytest · Cargo
 
 ---
 
-<p align="center"><sub>Open to interesting backend / infra / Telegram-platform work — <a href="mailto:aryn@sek.su">aryn@sek.su</a></sub></p>
+<p align="center"><sub>Open to infrastructure, SRE and backend work — <a href="mailto:aryn@sek.su">aryn@sek.su</a></sub></p>
 <p align="center"><sub>⭐ From <a href="https://github.com/arynyklas">arynyklas</a> · brewed with ☕ in Astana</sub></p>
